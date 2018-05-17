@@ -54,7 +54,7 @@ export class ChilddetailsPage {
         "getData":true
         }
   
-      this.http.post("https://offline.pinnacleseven.com/api/getDatas", body, options)
+       this.http.post("https://offline.pinnacleseven.com/api/getDatas", body, options)
       .subscribe(data => {
       console.log("sdsdsd",data);
       var ddd = JSON.parse(data['_body']);
