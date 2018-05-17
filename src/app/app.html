@@ -1,1 +1,62 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-header style="background-color:black">
+      <ion-toolbar >
+          <div style="background:linear-gradient(to right,white, #5390CF)">
+     
+        <img style="width:100px" src="assets/imgs/sfcs.png">
+        
+      </div>
+      </ion-toolbar>
+    </ion-header>
+  
+    <ion-content style="background:linear-gradient(to right,white, #5390CF);">
+      <ion-list>
+  
+  
+                   <ion-item menuClose ion-item style="background:linear-gradient(to right,white, #5390CF);">
+          
+                      <ion-icon style="font-size:28px" item-left name="contact"></ion-icon>
+                  
+                      <h2 style="font-size:18px;color:black" (click)="children()"><b>Children's Details</b></h2>
+                    
+                      </ion-item>
+  
+                  <ion-item menuClose ion-item  style="background:linear-gradient(to right,white, #5390CF);;height:40px"> 
+                      <ion-icon style="font-size:25px" name="log-out" item-left></ion-icon>
+                      <h2 style="font-size:18px;color:black" (click)="goLogin()"> <b>Logout</b> </h2>
+                      </ion-item> 
+                  
+                </ion-list>
+  
+  
+  
+  
+        
+        
+      
+    </ion-content>
+    
+    
+    
+    
+    
+    
+    <ion-footer>
+      <ion-item no-lines style="height:20px;">
+          <ion-row >
+              <ion-col width-50>
+                  <p style="font-size:10px;text-align:right;margin-top:5px;">Powered by </p>
+                </ion-col>
+                <ion-col width-50>
+        <img style="width:20px;height:20px;text-align:left"  src="assets/imgs/logo.png">
+      
+                </ion-col>
+                </ion-row>
+       
+        
+      </ion-item></ion-footer>
+  
+  </ion-menu>
+  
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

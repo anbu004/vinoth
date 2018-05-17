@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="color:white">Children's Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color:aliceblue">
+    <ion-fab top right edge>
+        <button ion-fab style="background-color:#a5c567" (click)="childinfo()" ><ion-icon name="add"></ion-icon>
+    </button>
+      </ion-fab>
+      <!-- <ion-list>
+        <ion-item *ngFor="let post of posts">
+          <img [src]="post.data.url" />
+        </ion-item>
+      </ion-list> -->
+      <ion-card  style="width:100%;margin-right:-2px;margin-left:-1px;box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)" *ngFor="let item of childdetail" >
+        <ion-card-header  style="background-color:#d1d8e4;margin-top:-3px;height: 48px;">
+         <ion-row>
+           <ion-col>
+          <p   style="font-size:13px;color:#00276C;margin-left:-4%" ><b>{{item.f_name}} {{item.l_name}}</b></p>
+        </ion-col>
+        <ion-col>
+          <ion-icon  style="color:red;font-size:20px;margin-left: 90%;margin-top: -3%;" (click)="clear(item)" name="remove-circle"></ion-icon>   
+        </ion-col>
+        </ion-row>
+        </ion-card-header>
+       
+        <ion-item (click)=formview(item)  style="background-color:#ffffff;margin-top:-3px">
+          <p style="font-size:13px;color:black" ><b>Phone</b></p>
+          <p   style="font-size:13px;color:black" item-right>{{item.m_phone}}</p>
+        </ion-item>
+  
+        <ion-item (click)=formview(item) style="margin-top:-8px;background-color:#ffffff">
+          <p style="font-size:13px;color:black"><b>Email</b></p>
+          <p  style="font-size:13px;color:black"  item-right>{{item.m_email}}</p>
+        </ion-item>
+     
+        <ion-item (click)=formview(item) style="margin-top:-8px;background-color:#ffffff">
+            <p style="font-size:13px;color:black"><b>Country</b></p>
+            <p  style="font-size:13px;color:black"  item-right>{{item.c_r_country}}</p>
+          </ion-item>
+    
+            
+  
+</ion-card>
+  
+</ion-content>
+<ion-footer>
+  <ion-item no-lines style="height:20px;">
+      <ion-row >
+          <ion-col width-50>
+              <p style="font-size:10px;text-align:right;margin-top:5px;">Powered by </p>
+            </ion-col>
+            <ion-col width-50>
+    <img style="width:20px;height:20px;text-align:left"  src="assets/imgs/logo.png">
+  
+            </ion-col>
+            </ion-row>
+   
+    
+  </ion-item></ion-footer>

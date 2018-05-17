@@ -1,0 +1,130 @@
+<!--
+  Generated template for the ChildinfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Child Information</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color:aliceblue">
+   
+  <ion-list style="box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);margin-top:5%;border: 0.6px solid rgb(109, 112, 167)">
+    <ion-item no-lines>
+      <ion-label style="font-size:13px;color:black;width:50%"item-left ><b>First Name</b></ion-label>
+      <ion-input [disabled]="!isenabled" style="font-size:13px;color:black;width:50%" item-right type="text" [(ngModel)]="f_name" name="f_name" ></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+        <ion-label style="font-size:13px;color:black;width:50%"item-left ><b>Last Name</b></ion-label>
+        <ion-input [disabled]="!isenabled" style="font-size:13px;color:black;width:50%" item-right type="text" [(ngModel)]="l_name" name="l_name" ></ion-input>
+      </ion-item>
+      <ion-item no-lines>
+          <ion-label style="font-size:13px;color:black;width:50%"item-left ><b>Phone Number</b></ion-label>
+          <ion-input [disabled]="!isenabled" style="font-size:13px;color:black;width:50%" item-right type="number" [(ngModel)]="m_phone" name="m_phone" ></ion-input>
+        </ion-item>
+      <ion-item no-lines>
+          <ion-label style="font-size:13px;color:black;width:50%"item-left ><b>Email Address</b></ion-label>
+          <ion-input [disabled]="!isenabled" style="font-size:13px;color:black;width:50%" item-right type="email" [(ngModel)]="m_email" name="m_email" ></ion-input>
+        </ion-item>
+        <ion-item no-lines>
+            <ion-label style="font-size:13px;color:black;width:30%"item-left ><b>DOB</b></ion-label>
+            <ion-datetime [disabled]="!isenabled" style="font-size:13px;color:black;width:70%" displayFormat="DD/MMM/YYYY" pickerFormat="DD/MMM/YYYY" [(ngModel)]="c_birth_date" name="c_birth_date" ></ion-datetime>
+          </ion-item>
+
+          <ion-item >
+              <ion-label style="font-size:13px;color:black;width:50%"><b>Gender</b></ion-label>
+              <ion-select [disabled]="!isenabled" style="font-size:13px;color:black;width:50%;margin-right:6%;" [(ngModel)]="child_gender"> 
+                  <ion-option >Female</ion-option>
+                  <ion-option>Male</ion-option>
+                  <ion-option>Undefined</ion-option>
+            </ion-select>
+              </ion-item >
+
+              <ion-item >
+                <ion-label style="font-size:13px;color:black;width:50%"><b>Ethnicity</b></ion-label>
+                <ion-select [disabled]="!isenabled" style="font-size:13px;color:black;width:50%;margin-right:6%;" [(ngModel)]="child_ethincity"> 
+                    <ion-option >Asian</ion-option>
+                    <ion-option>White</ion-option>
+                    <ion-option>Black or African American</ion-option>
+                    <ion-option>Pacific Islander</ion-option>
+                    <ion-option>American Indian</ion-option>
+                    <ion-option>Hispanic or Latino</ion-option>
+                    <ion-option >Some other race</ion-option>
+                    <ion-option >I do not know (mutually exclusive)</ion-option>
+              </ion-select>
+                </ion-item >
+
+              <!-- <ion-item no-lines>
+                  <ion-label style="font-size:13px;color:black;width:50%"item-left ><b>Institution Name</b></ion-label>
+                  <ion-input [disabled]="!isenabled" style="font-size:13px;color:black;width:50%" item-right type="text" [(ngModel)]="institution" name="institution" ></ion-input>
+                </ion-item> -->
+
+                <ion-item no-lines>
+                    <ion-label style="font-size:13px;color:black;width:50%"item-left ><b>Facebook Username</b></ion-label>
+                    <ion-input [disabled]="!isenabled" style="font-size:13px;color:black;width:50%" item-right type="text" [(ngModel)]="fa_name" name="fa_name" ></ion-input>
+                  </ion-item>
+
+                  <ion-item no-lines>
+                    <ion-label style="font-size:13px;color:black;width:50%"item-left ><b>Instagram Username</b></ion-label>
+                    <ion-input [disabled]="!isenabled" style="font-size:13px;color:black;width:50%" item-right type="text" [(ngModel)]="in_name" name="in_name" ></ion-input>
+                  </ion-item>
+
+                  <ion-item no-lines>
+                    <ion-label style="font-size:13px;color:black;width:50%"item-left ><b>Snapchat</b></ion-label>
+                    <ion-input [disabled]="!isenabled" style="font-size:13px;color:black;width:50%" item-right type="text" [(ngModel)]="sn_name" name="sn_name" ></ion-input>
+                  </ion-item>
+
+                  <ion-item style="height:14px;background-color:#e0f0fb" no-lines>
+      
+                    <ion-label style="width:50%;color:black;font-size:13px" (click)="address()"> <b>  Address</b></ion-label>
+                    <ion-icon  name="create" (click)="address()" item-right  style="font-size:13px"></ion-icon>
+                  </ion-item>
+          
+                  <ion-item *ngIf="hide"  no-lines>
+                    <ion-label style="width:50%;color:black;font-size:13px" item-left><b>Street</b></ion-label>
+                    <ion-input [disabled]="!isenabled" style="text-align:right;width:50%;color:black;font-size:13px" item-right type="text"  [(ngModel)]="c_r_street" name="c_r_street"></ion-input>
+                  </ion-item>
+                 
+                  <ion-item *ngIf="hide"  no-lines>
+                      <ion-label style="width:50%;color:black;font-size:13px" item-left><b>City</b></ion-label>
+                      <ion-input [disabled]="!isenabled" style="text-align:right;width:50%;color:black;font-size:13px" item-right type="text"  [(ngModel)]="c_r_city" name="c_r_city"></ion-input>
+                      </ion-item>
+          
+                      <ion-item *ngIf="hide"  no-lines>
+                        <ion-label style="width:50%;color:black;font-size:13px" item-left><b>State</b></ion-label>
+                        <ion-input [disabled]="!isenabled"  item-right style="text-align:right;width:50%;color:black;font-size:13px" item-right type="text"  [(ngModel)]="c_r_state" name="c_r_state"></ion-input>
+                      </ion-item>
+          
+                  <ion-item *ngIf="hide"  no-lines>
+                      <ion-label style="width:50%;color:black;font-size:13px" item-left><b>Zipcode</b></ion-label>
+                    <ion-input [disabled]="!isenabled"  item-right style="text-align:right;width:50%;color:black;font-size:13px" item-right type="text"  [(ngModel)]="c_r_zip" name="c_r_zip"></ion-input>
+                  </ion-item>
+
+                  <ion-item *ngIf="hide"  no-lines>
+                    <ion-label style="width:50%;color:black;font-size:13px" item-left><b>Country</b></ion-label>
+                  <ion-input [disabled]="!isenabled"  item-right style="text-align:right;width:50%;color:black;font-size:13px" item-right type="text"  [(ngModel)]="c_r_country" name="c_r_country"></ion-input>
+                </ion-item>
+    </ion-list>
+    
+   
+</ion-content>
+
+
+<!-- <ion-footer >
+   
+  <ion-item *ngIf="editbutton" style="height:20px;">
+    <button  style="width:100%;background-color:#00276C" item-left ion-button  (click)="edit()">Edit</button>
+</ion-item>
+  <ion-item *ngIf="!editbutton" no-lines style="height:20px;">
+
+    <button  style="width:40%;background-color:#00276C" item-left ion-button  (click)="submit()">Save</button>
+    <button  style="width:75%;background-color:	#FCB92F" item-right ion-button color="danger" (click)="discard()">Discard</button>
+          
+  </ion-item>
+</ion-footer> -->

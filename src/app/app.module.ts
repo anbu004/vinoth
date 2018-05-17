@@ -3,28 +3,44 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { IonicStorageModule } from '@ionic/storage';
+import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { Network } from '@ionic-native/network';
+import {Login} from '../pages/login/login'
+import {ChilddetailsPage} from '../pages/childdetails/childdetails';
+import {ChildinfoPage} from '../pages/childinfo/childinfo';
+import {ChildinfoeditPage} from '../pages/childinfoedit/childinfoedit';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    Login,
+    ChilddetailsPage,
+    ChildinfoPage,
+    ChildinfoeditPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    Login,
+    ChilddetailsPage,
+    ChildinfoPage,
+    ChildinfoeditPage
   ],
   providers: [
+    Network,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    
   ]
 })
 export class AppModule {}

@@ -1,0 +1,60 @@
+<ion-content id="login" padding>
+    <form (ngSubmit)="login()" #registerForm="ngForm">
+    <!-- <h4 style="text-align: center;font-size:20px;margin-top:175px" >Pinnacle Seven Technologies</h4>
+     <h5 style="text-align: center;font-size:20px">Gateway to Solutions</h5> -->
+     
+          <div style="padding-top:28%;text-align: center;">
+
+            <div style="text-align:center">
+                <img style="width:200px;height:70px;margin-bottom:10px" src="assets/imgs/sfcs.png">
+            </div>
+          
+            <div style="border: double rgba(255,255,255,.1);background-color:#d6dae0">
+              <ion-row>
+                <!-- <ion-col width-20 style="margin-top:11px">
+              <ion-icon style="color:#657CAE;"  name="person"></ion-icon>
+            </ion-col> -->
+            <ion-col width-100>
+              <ion-input style="color:#5390CF;  margin-left: 20%" type="text" placeholder="Username" name="username" [(ngModel)]="user.name" required> </ion-input>
+            </ion-col>
+            </ion-row> 
+            </div>
+            
+            <div style="border: double rgba(255,255,255,.1) ;margin-top:7px;background-color:#d6dae0" *ngIf="hide"  >
+              <ion-row>
+                <!-- <ion-col width-20 style="margin-top:11px">
+              <ion-icon style="color:#657CAE;" name="lock"></ion-icon>
+            </ion-col> -->
+            <ion-col width-100>
+              <ion-input style="color:#5390CF;  margin-left: 20%" type="text" placeholder="Password" name="password" [(ngModel)]="user.password" required></ion-input>
+            </ion-col>
+            </ion-row>
+            </div>
+            <div style="border: double rgba(255,255,255,.1);margin-top:7px;background-color:#d6dae0" *ngIf="!hide">
+                <ion-row>
+                  <!-- <ion-col width-20 style="margin-top:11px">
+              <ion-icon style="color:#657CAE;" name="lock"></ion-icon>
+            </ion-col> -->
+            <ion-col width-100>
+                <ion-input style="color:#5390CF; margin-left: 20%" type="password" placeholder="Password" name="password" [(ngModel)]="user.password" required></ion-input>
+              </ion-col>
+              </ion-row>
+              </div>
+            
+            <!-- <div style="border: double rgba(255,255,255,.1);margin-top:5px;background-color:rgba(255,255,255,.1)"> -->
+              <ion-row>
+                <ion-col width-20 style="margin-top:11px;margin-left: -25%;">
+              <ion-checkbox style="color:#ffffff;" name="hide" [(ngModel)]="hide"></ion-checkbox>
+            </ion-col>
+            <ion-col width-80 style="    margin-left: -25%;">
+              <ion-label style="color:#657CAE;float:left;">Show Password</ion-label> 
+            </ion-col>
+            </ion-row>  
+            <!-- </div> -->
+          
+
+          <button ion-button style="background-color:#5390CF;margin-top:12px;" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
+        
+      </div>
+    </form>
+</ion-content>
